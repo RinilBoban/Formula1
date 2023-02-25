@@ -5,10 +5,12 @@ import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
+import Racelist from './Racelist';
 
 function Raceschedule() {
 
-    const [schedules, setSchedules] = useState({})
+    const [schedules, setSchedules] = useState([])
+    const [year,setYear] = useState('')
     const [round,setRound] = useState('')
     const [raceName,setRaceName] = useState('')
     const [circuitName,setCircuitName] = useState('')
@@ -17,8 +19,8 @@ function Raceschedule() {
     const [time,setTime] = useState('')
 
     async function fetchData() {
-        const result = await instance.get('2021.json')
-        console.log(result.data.MRData.RaceTable.Races);
+        const result = await instance.get(`${year}.json`)
+        // console.log(result.data.MRData.RaceTable.Races);
         setRound(result.data.MRData.RaceTable.Races[0].round)
         setRaceName(result.data.MRData.RaceTable.Races[0].raceName)
         setCircuitName(result.data.MRData.RaceTable.Races[0].Circuit.circuitName)
@@ -26,24 +28,29 @@ function Raceschedule() {
         setDate(result.data.MRData.RaceTable.Races[0].date)
         setTime(result.data.MRData.RaceTable.Races[0].time)
         setSchedules(result.data.MRData.RaceTable.Races)
-        console.log(schedules);
     }
     useEffect(() => {
         fetchData()
     }, [])
 
+    // async function searcher=(e)=>{
+    //     const result = await instance.get(`${year}.json`)
+    //     setSchedules(result.data.MRData.RaceTable.Races)
+    // }
+
     return (
         <div>
             <div>
                 <Form className='col-3 p-1'>
-                    <Form.Group className="mb-3" controlId="formBasicEmail">
-                        <Form.Control type="email" placeholder="Enter year" />
+                    <Form.Group className="mb-3">
+                        <Form.Control onChange={(e)=>setYear(e.target.value)} type="text" placeholder="Enter year" />
                     </Form.Group>
 
                     <div className='text-center'>
-                            <Button variant="primary" type="submit">
+                            <Button variant="primary" onClick={fetchData}>
                                 Search
                             </Button>
+                            <h5>{year}</h5>
                     </div>
                 </Form>
 
@@ -59,25 +66,20 @@ function Raceschedule() {
                         <th>Time</th>
                     </tr>
                 </thead>
+                {/* <Racelist/> */}
                 <tbody>
-                    <tr>
-                        {schedules.map((data)=>(
-                            <Col>
+
+                        {schedules.map(data=>(
+                            <tr key={data.round}>
                                 <td>{data.round}</td>
                                 <td>{data.raceName}</td>
                                 <td>{data.Circuit.circuitName}</td>
                                 <td>{data.Circuit.Location.country}</td>
                                 <td>{data.date}</td>
                                 <td>{data.time}</td>
-                            </Col>
+                            </tr>
                         ))}
-                        {/* <td>{round}</td>
-                        <td>{raceName}</td>
-                        <td>{circuitName}</td>
-                        <td>{country}</td>
-                        <td>{date}</td>
-                        <td>{time}</td> */}
-                    </tr>
+
                 </tbody>
             </Table>
 

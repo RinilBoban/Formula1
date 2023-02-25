@@ -18,9 +18,14 @@ function Home() {
             <Button>Race Schedules</Button>
         </Link>
 
+        <Link to={'standings'}>
+          <Button>Standings</Button>
+        </Link>
 
     </div>
   )
 }
 
 export default Home
+
+// https://s0.2mdn.net/dfp/1779066/5130156133/1676982839104/ATA-IconParka-Libery%20Media-Media_en_970x250/headline-1.png

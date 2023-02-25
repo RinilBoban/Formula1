@@ -6,6 +6,7 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
 import Login from './components/Login';
 import Register from './components/Register';
 import Raceschedule from './components/Raceschedule';
+import Standings from './components/Standings';
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
           <Route path='login' element={<Login/>}/>
           <Route path='register' element={<Register/>}/>
           <Route path='raceschedules' element={<Raceschedule/>}/>
+          <Route path='standings' element={<Standings/>}/>
         </Routes>
       </Router>
       <Footer/>
