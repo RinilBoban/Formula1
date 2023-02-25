@@ -22,6 +22,11 @@ function Home() {
           <Button>Standings</Button>
         </Link>
 
+        <Link to={'/'}>
+          <Button>Race Results</Button>
+        </Link>
+
+
     </div>
   )
 }

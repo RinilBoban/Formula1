@@ -3,9 +3,6 @@ import Table from 'react-bootstrap/Table';
 import instance from '../baseUrl';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
-import Racelist from './Racelist';
 
 function Raceschedule() {
 
@@ -32,11 +29,6 @@ function Raceschedule() {
     useEffect(() => {
         fetchData()
     }, [])
-
-    // async function searcher=(e)=>{
-    //     const result = await instance.get(`${year}.json`)
-    //     setSchedules(result.data.MRData.RaceTable.Races)
-    // }
 
     return (
         <div>
