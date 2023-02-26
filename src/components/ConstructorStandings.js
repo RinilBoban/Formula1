@@ -26,7 +26,7 @@ function ConstructorStandings() {
         <Form.Control onChange={(e)=>setYear(e.target.value)} type="text" placeholder="Enter Year to search..." />
       </Form.Group>
       <Button onClick={getData} className='mb-4' variant="light">
-        Submit
+        Search
       </Button>
     </Form>
     <h2>{year}</h2>

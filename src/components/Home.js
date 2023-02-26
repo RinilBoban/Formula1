@@ -26,6 +26,17 @@ function Home() {
           <Button>Race Results</Button>
         </Link>
 
+        <Link to={'merchandise'}>
+          <Button>Merchandise</Button>
+        </Link>
+
+        <Link to={'bookTickets'}>
+          <Button>Ticket Booker</Button>
+        </Link>
+
+        <Link to={'cart'}>
+          <Button>Cart</Button>
+        </Link>
 
     </div>
   )

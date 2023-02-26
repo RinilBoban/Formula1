@@ -7,6 +7,9 @@ import Login from './components/Login';
 import Register from './components/Register';
 import Raceschedule from './components/Raceschedule';
 import Standings from './components/Standings';
+import Merchandise from './components/Merchandise';
+import BookTickets from './components/BookTickets';
+import Cart from './components/Cart';
 
 function App() {
   return (
@@ -21,6 +24,9 @@ function App() {
           <Route path='register' element={<Register/>}/>
           <Route path='raceschedules' element={<Raceschedule/>}/>
           <Route path='standings' element={<Standings/>}/>
+          <Route path='merchandise' element={<Merchandise/>}/>
+          <Route path='bookTickets' element={<BookTickets/>}/>
+          <Route path='cart' element={<Cart/>}/>
         </Routes>
       </Router>
       <Footer/>

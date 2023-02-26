@@ -7,7 +7,7 @@ import Button from 'react-bootstrap/Button';
 function Raceschedule() {
 
     const [schedules, setSchedules] = useState([])
-    const [year,setYear] = useState('')
+    const [year,setYear] = useState('2023')
     const [round,setRound] = useState('')
     const [raceName,setRaceName] = useState('')
     const [circuitName,setCircuitName] = useState('')
@@ -33,7 +33,7 @@ function Raceschedule() {
     return (
         <div>
             <div>
-                <Form className='col-3 p-1'>
+                <Form className='col-3 p-1 ms-5 mt-3'>
                     <Form.Group className="mb-3">
                         <Form.Control onChange={(e)=>setYear(e.target.value)} type="text" placeholder="Enter year" />
                     </Form.Group>
@@ -42,7 +42,7 @@ function Raceschedule() {
                             <Button variant="primary" onClick={fetchData}>
                                 Search
                             </Button>
-                            <h5>{year}</h5>
+                            <h1 style={{marginLeft:'700px', marginTop:'-100px', paddingBottom:'60px'}}>{year}</h1>
                     </div>
                 </Form>
 
@@ -58,7 +58,6 @@ function Raceschedule() {
                         <th>Time</th>
                     </tr>
                 </thead>
-                {/* <Racelist/> */}
                 <tbody>
 
                         {schedules.map(data=>(
@@ -71,7 +70,6 @@ function Raceschedule() {
                                 <td>{data.time}</td>
                             </tr>
                         ))}
-
                 </tbody>
             </Table>
 
