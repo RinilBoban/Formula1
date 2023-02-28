@@ -15,6 +15,7 @@ function Merchandise() {
   const [category,setCategory] = useState('')
   const [description,setDescription] = useState('')
   const [price,setPrice] = useState('')
+  // const [total,setTotal] = useState(0)
   
   const getData=(e)=>{
 
@@ -31,12 +32,13 @@ function Merchandise() {
 
   async function addToCart(item){
     console.log(item.price);
-    setId(item.id)
-    setImage(item.image)
-    setTitle(item.title)
-    setPrice(item.price)
-    setCategory(item.category)
-    setDescription(item.description)
+      setId(item.id)
+      setImage(item.image)
+      setTitle(item.title)
+      setPrice(item.price)
+      setCategory(item.category)
+      setDescription(item.description)  
+    
 
     const data={
       id,

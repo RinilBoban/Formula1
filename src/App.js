@@ -10,6 +10,7 @@ import Standings from './components/Standings';
 import Merchandise from './components/Merchandise';
 import BookTickets from './components/BookTickets';
 import Cart from './components/Cart';
+import CreditCardForm from './components/CreditCardForm';
 
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
           <Route path='merchandise' element={<Merchandise/>}/>
           <Route path='bookTickets' element={<BookTickets/>}/>
           <Route path='cart' element={<Cart/>}/>
+          <Route path='creditcard' element={<CreditCardForm/>}/>
         </Routes>
       </Router>
       <Footer/>

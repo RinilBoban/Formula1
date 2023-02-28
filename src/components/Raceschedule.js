@@ -3,6 +3,7 @@ import Table from 'react-bootstrap/Table';
 import instance from '../baseUrl';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
+import BookTickets from './BookTickets';
 
 function Raceschedule() {
 
@@ -58,11 +59,11 @@ function Raceschedule() {
                         <th>Time</th>
                     </tr>
                 </thead>
-                <tbody>
+                <tbody style={{cursor:'pointer'}}>
 
                         {schedules.map(data=>(
                             <tr key={data.round}>
-                                <td>{data.round}</td>
+                                <td>{data.round}<BookTickets/></td>
                                 <td>{data.raceName}</td>
                                 <td>{data.Circuit.circuitName}</td>
                                 <td>{data.Circuit.Location.country}</td>
